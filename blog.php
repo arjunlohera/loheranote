@@ -1,7 +1,15 @@
+<!-- Write a blog -->
+<?php
+session_start();
+if(!isset($_SESSION['authuser']) && $_SESSION['authuser'] != 1) {
+  header("Location: index.php");
+  exit();
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Write your Blog Post | LoheraNote</title>
+  <title><?php echo $_SESSION['username'];?>, write your Blog Post | LoheraNote</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -17,12 +25,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <p class="text-white">Welcome, <?php echo $_SESSION['username'];?></p>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa fa-edit"></i> Wall</a>
+          <a class="nav-link" href="wall.php"><i class="fa fa-edit"></i> Wall</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa fa-arrow-circle-right"></i> Logout</a>
+          <a class="nav-link" href="logout.php"><i class="fa fa-arrow-circle-right"></i> Logout</a>
         </li>
       </ul>
     </div>
@@ -34,14 +43,14 @@
   <div class="container my-5">
     <div class="row">
       <div class="col-12 col-md-8">
-        <form>
+        <form action="writeblog.php" method="post">
           <div class="form-group">
             <label for="title" class="h5 my-1">Title</label>
-            <input class="form-control form-control-lg mb-2" type="text" placeholder="Title">
+            <input class="form-control form-control-lg mb-2" name="title" id="title" type="text" placeholder="Title">
             <label for="blog" class="h5 my-1">Blog post</label>
-            <textarea class="form-control form-control-lg" id="blog" rows="8" placeholder="Write your post here..."></textarea>
+            <textarea class="form-control form-control-lg" id="blog" name="blog_content" rows="8" placeholder="Write your post here..."></textarea>
           </div>
-          <button type="button" class="btn primary-color text-white mb-3">Post Now</button>
+          <button type="submit" class="btn primary-color text-white mb-3">Post Now</button>
         </form>
       </div>
     </div>
