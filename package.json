@@ -4,7 +4,11 @@
   "description": "A blog for daily post",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf dist",
+    "copyfonts": "copyfiles -f fontawesome/* dist/fonts",
+    "usemin": "usemin blog.php -d dist --htmlmin -o dist/blog.php && usemin index.php -d dist --htmlmin -o dist/index.php && usemin wall.php -d dist --htmlmin -o dist/wall.php",
+    "build": "npm run clean && npm run copyfonts && npm run usemin"
   },
   "repository": {
     "type": "git",
@@ -20,5 +24,13 @@
     "bootstrap": "^4.1.3",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.4"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.1.0",
+    "cssmin": "^0.4.3",
+    "htmlmin": "0.0.7",
+    "rimraf": "^2.6.2",
+    "uglifyjs": "^2.4.11",
+    "usemin-cli": "^0.5.1"
   }
 }

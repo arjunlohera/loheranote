@@ -7,10 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <!-- stylesheets -->
+  <!-- build:css css/main.css -->
   <link rel="stylesheet" href="css/custom.css">
   <link rel="stylesheet" href="fontawesome/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <!-- endbuild -->
 </head>
 
 <body>
@@ -95,13 +96,11 @@
   </footer>
 
 
-  <!-- javascript -->
+  <!-- build:js js/main.js -->
   <script src="js/jquery.slim.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.validate.min.js"></script>
-
-  <!-- custom js -->
-  <script src="js/script.js"></script>
+  <!-- <script src="js/jquery.validate.min.js"></script> -->
+  <!-- endbuild -->
 </body>
 </html>

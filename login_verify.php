@@ -1,7 +1,11 @@
-<!-- php script for login -->
 <?php
+session_start();
+$_SESSION['authuser'] = 0;
+$_SESSION['username'] = "";
+$_SESSION['user_id'] = "";
+/*Ending session */
 if(isset($_POST['user_email']) && !empty($_POST['user_email']) AND isset($_POST['user_password']) && !empty($_POST['user_password'])) {
-  $connection = mysqli_connect("localhost", "root", "arjun1995", "loheranote");
+  $connection = mysqli_connect("localhost", "id6446073_arjun", "arjun1995", "id6446073_loheranote");
   if(mysqli_connect_errno()) {
       printf("Connect failed: %s\n", mysqli_connect_error());
       exit();
@@ -18,12 +22,9 @@ if(isset($_POST['user_email']) && !empty($_POST['user_email']) AND isset($_POST[
 
 
   if($match > 0 && $row["active"] == 1) {
-    /*start session */
-    session_start();
-    $_SESSION['username'] = $row["user_name"];
-    $_SESSION['user_id'] = $row["id"];
     $_SESSION['authuser'] = 1;
-    /*Ending session */
+    $_SESSION['username'] = $row['user_name'];
+    $_SESSION['user_id'] = $row['id'];
     header("Location: blog.php");
   } else {
     echo "<script>
@@ -42,3 +43,4 @@ mysqli_free_result($result);
 mysqli_close($connection);
 ?>
 <!-- end of php script for login -->
+<!-- php script for login -->

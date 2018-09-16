@@ -3,7 +3,7 @@ verify account through email
 update the active status (active)
 -->
 <?php
-$connection = mysqli_connect("localhost", "root", "arjun1995", "loheranote");
+$connection = mysqli_connect("localhost", "id6446073_arjun", "arjun1995", "id6446073_loheranote");
 
 if(mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());

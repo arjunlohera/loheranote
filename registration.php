@@ -4,7 +4,7 @@ Send verify email to user's email id.
 -->
 <?php
 if(isset($_POST['inputName']) && !empty($_POST['inputName']) AND isset($_POST['inputEmail1']) && !empty($_POST['inputEmail1']) AND isset($_POST['inputPhone']) && !empty($_POST['inputPhone']) AND isset($_POST['password']) && !empty($_POST['password'])) {
-  $connection = mysqli_connect("localhost", "root", "arjun1995", "loheranote");
+  $connection = mysqli_connect("localhost", "id6446073_arjun", "arjun1995", "id6446073_loheranote");
 
   if(mysqli_connect_errno()) {
       printf("Connect failed: %s\n", mysqli_connect_error());

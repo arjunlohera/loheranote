@@ -1,7 +1,6 @@
-<!-- Write a blog -->
 <?php
 session_start();
-if(!isset($_SESSION['authuser']) && $_SESSION['authuser'] != 1) {
+if(empty($_SESSION['authuser']) || !isset($_SESSION['authuser']) || $_SESSION['authuser'] != 1) {
   header("Location: index.php");
   exit();
 }
@@ -14,18 +13,19 @@ if(!isset($_SESSION['authuser']) && $_SESSION['authuser'] != 1) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <!-- stylesheets -->
+  <!-- build:css css/main.css -->
   <link rel="stylesheet" href="css/custom.css">
   <link rel="stylesheet" href="fontawesome/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <!-- endbuild -->
 </head>
 <body>
   <nav class="primary-color navbar navbar-expand-lg navbar-dark ">
+    <p class="text-white">Welcome, <?php echo $_SESSION['username'];?></p>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <p class="text-white">Welcome, <?php echo $_SESSION['username'];?></p>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" href="wall.php"><i class="fa fa-edit"></i> Wall</a>
@@ -55,9 +55,10 @@ if(!isset($_SESSION['authuser']) && $_SESSION['authuser'] != 1) {
       </div>
     </div>
   </div>
-  <!-- javascript -->
+  <!-- build:js js/main.js -->
   <script src="js/jquery.slim.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <!-- endbuild -->
 </body>
 </html>

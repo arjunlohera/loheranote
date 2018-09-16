@@ -6,7 +6,7 @@ if(isset($_POST['title']) && !empty($_POST['title']) AND isset($_POST['blog_cont
     header("Location: index.php");
     exit();
   }
-  $connection = mysqli_connect("localhost", "root", "arjun1995", "loheranote");
+  $connection = mysqli_connect("localhost", "id6446073_arjun", "arjun1995", "id6446073_loheranote");
   if(mysqli_connect_errno()) {
       printf("Connect failed: %s\n", mysqli_connect_error());
       exit();

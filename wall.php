@@ -6,10 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <!-- stylesheets -->
+  <!-- build:css css/main.css -->
   <link rel="stylesheet" href="css/custom.css">
   <link rel="stylesheet" href="fontawesome/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <!-- endbuild -->
 </head>
 <body>
   <nav class="primary-color navbar navbar-expand-lg navbar-dark ">
@@ -33,7 +34,7 @@
   <div class="container mt">
     <!-- php script for wall -->
     <?php
-    $connection = mysqli_connect("localhost", "root", "arjun1995", "loheranote");
+    $connection = mysqli_connect("localhost", "id6446073_arjun", "arjun1995", "id6446073_loheranote");
     if(mysqli_connect_errno()) {
         printf("Connect failed: %s\n", mysqli_connect_error());
         exit();
@@ -81,9 +82,10 @@
   </div>
 </footer>
 
-  <!-- javascript -->
+  <!-- build:js js/main.js -->
   <script src="js/jquery.slim.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <!-- endbuild -->
 </body>
 </html>
